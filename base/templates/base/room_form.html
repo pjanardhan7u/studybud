@@ -20,6 +20,7 @@
           </div>
         </div>
         <div class="layout__body">
+
           <form method="POST" class="form" action="">
             {% csrf_token %}
 
@@ -51,7 +52,7 @@
             <div class="form__group">
               <label for="room_description">Room Description </label>
               
-               {{form.name}}
+               {{form.description}}
             </div>
 
             

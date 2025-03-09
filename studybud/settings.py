@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
+
+AUTH_USER_MODEL='base.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -124,6 +127,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+MEDIA_URL = '/images/' 
+
+MEDIA_ROOT = BASE_DIR / 'static/images'
 
 # STATIC_ROOT=
 

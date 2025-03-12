@@ -168,4 +168,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 CORS_ALLOW_ALL_ORIGINS=True

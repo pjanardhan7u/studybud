@@ -87,13 +87,25 @@ WSGI_APPLICATION = 'studybud.wsgi.application'
 # }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'learnspace',
+#         'USER': 'root',
+#         'PASSWORD': '0556',
+#         'HOST': 'localhost',  # or the hostname where your MySQL server is running
+#         'PORT': '3306',      # or the port on which your MySQL server is listening
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'learnspace',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': '0556',
-        'HOST': 'localhost',  # or the hostname where your MySQL server is running
+        'PASSWORD': 'OakSSbMRwplHOlXHvyDOxicMCQSLEzEa',
+        'HOST': 'mysql.railway.internal',  # or the hostname where your MySQL server is running
         'PORT': '3306',      # or the port on which your MySQL server is listening
     }
 }

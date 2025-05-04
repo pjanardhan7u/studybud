@@ -67,3 +67,43 @@ if (photoInput)
 // Scroll to Bottom
 const conversationThread = document.querySelector(".room__box");
 if (conversationThread) conversationThread.scrollTop = conversationThread.scrollHeight;
+
+
+
+
+const roomName = "{{ room_name }}";  // Use Django template if needed
+const chatSocket = new WebSocket(
+    'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
+);
+
+// When a message is received from the server
+chatSocket.onmessage = function(e) {
+    const data = JSON.parse(e.data);
+    const message = data.message;
+
+    const chatLog = document.getElementById('chat-log');
+    const newItem = document.createElement('li');
+    newItem.textContent = message;
+    chatLog.appendChild(newItem);
+};
+
+// If WebSocket closes
+chatSocket.onclose = function(e) {
+    console.error('Chat socket closed unexpectedly');
+};
+
+// Send message to the server
+function sendMessage() {
+    const input = document.getElementById('message-input');
+    const message = input.value;
+
+    if (message.trim() !== '') {
+        chatSocket.send(JSON.stringify({ 'message': message }));
+        input.value = '';
+    }
+}
+
+// Optional: send message on Enter key
+document.getElementById('message-input').addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') sendMessage();
+});

@@ -14,9 +14,6 @@ class User(AbstractUser):
     USERNAME_FIELD='email'
     REQUIRED_FIELDS=[]
 
-    
-
-
 
 
 # topic can have multiple rooms a room can have one topic
